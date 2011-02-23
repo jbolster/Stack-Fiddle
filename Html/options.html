@@ -3,12 +3,23 @@
 	<head>
 		<title>StackFiddle | Woo!</title>
 		<link rel="stylesheet" href="/reset.css" />
+		<link rel="stylesheet" href="/jquery.tagsinput.css" />
 		<script type="text/javascript" src="/Scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="/Scripts/jquery.tagsinput.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				
 				var optionsInframe = localStorage["optionsInframe"],
-					optionsframework = localStorage["options-framework-value"];
+					optionsframework = localStorage["options-framework-value"],
+					optionstags = localStorage["tags"];
+					
+				if(optionstags){
+					$('#option-tags').val(optionstags);
+				}
+				
+				$('#option-tags').tagsInput({
+					'width':'450px'
+				});
 				
 				if(optionsInframe === 'true'){
 					$("#option-inframe").attr("checked","checked");
@@ -28,6 +39,8 @@
 					localStorage["options-framework"] = $framework.data("framework");
 					localStorage["options-framework-version"] = $framework.data("version");
 					localStorage["options-framework-value"] = $framework.val();
+
+					localStorage["tags"] = $('#option-tags').val();
 					
 					$("#saveInfo").show();
 					setTimeout(function(){ $("#saveInfo").fadeOut(); }, 3000);
@@ -50,6 +63,7 @@
 			.option { margin-bottom: 10px;}
 			.manual { display: block; clear: both; border: 1px solid #ddd; margin: 15px;}
 			ol,li { list-style: decimal; margin-left: 30px; margin-right:10px; }
+			.tagsinput{margin:20px;}
 		</style>
 	</head>
 	<body>
@@ -119,7 +133,14 @@
 						</select>
 					</label>
 					<p class="note">Select your favourite library and version! This will be the default for your fiddles.</p>
-				</div>			
+				</div>		
+				<div class="option">
+					<label>
+						Apply to these tags
+						<input type="text" id="option-tags" value="jscript,jquery,javascript,mootools,html,css,dom,yui,prototype,dojo,extjs"/>
+					</label>
+					<p class="note">Stack Fiddle will only work on questions that have the tags above. If you want it working elsewhere then add it here. If you think I've forgotten an important one in the default list, let me know!</p>
+				</div>				
 				<div id="saveSection">
 					<span id="saveInfo">All saved - yeay!</span>
 					<input type="button" id="saveButton" value="Save" />

@@ -4,6 +4,13 @@
 	chrome.extension.onRequest.addListener(function(request, sender, sendResponse){	
 		if (request.method === "getlocal"){
 			sendResponse({'value' : localStorage[request.param]});
+		} else if (request.method === "gettags"){
+		
+			if(!localStorage["tags"]) {
+				localStorage["tags"] = 'jscript,jquery,javascript,mootools,html,css,dom,yui,prototype,dojo,extjs';
+			}
+		
+			sendResponse({'value' : localStorage["tags"]});
 		} else {
 			sendResponse({});
 		}
