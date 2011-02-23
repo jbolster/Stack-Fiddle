@@ -1,0 +1,24 @@
+{
+	"name": "Stack Fiddle",
+	"version": "1.0.1",
+	"description": "A jsFiddle helper for Stack Overflow",
+	"background_page": "Html/background.html",
+	"options_page": "Html/options.html",
+	"incognito": "split",
+	"permissions":[
+		"tabs",
+		"http://stackoverflow.com/*",
+		"contextMenus"
+	],
+	"content_scripts": [
+    {
+      "matches": ["http://stackoverflow.com/*"],
+      "css": ["styles.css"],
+      "js": ["Scripts/jquery.min.js", "Scripts/stackfiddle.js"]
+    }],
+	"icons" : {
+		"16" : "Images/Icon-16.png",
+		"48" : "Images/Icon-48.png",
+		"128" : "Images/Icon-128.png"
+	}
+}

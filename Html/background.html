@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript">
+	chrome.extension.onRequest.addListener(function(request, sender, sendResponse){	
+		if (request.method === "getlocal"){
+			sendResponse({'value' : localStorage[request.param]});
+		} else {
+			sendResponse({});
+		}
+	});
+	
+	chrome.contextMenus.create({ "title": "Stack Fiddle", "contexts": ["all"], "onclick" : showOptions });
+	
+	function showOptions(info, tab) {
+		chrome.tabs.create({ url:"/Html/options.html", index: (tab.index + 1) });
+	}
+	
+</script>
+</head>
+<body>
+</body>
+</html>

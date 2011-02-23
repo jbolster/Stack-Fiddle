@@ -1,0 +1,37 @@
+.stackfiddle-header{
+	display: block;
+	top: 10px;
+	left: 10px;
+	width: auto;
+	opacity: 0.8;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+
+.stackfiddle-header span{
+	padding: 3px;
+	display: block;
+}
+
+.stackfiddle-submit{
+	display: none;
+	float:right;
+}
+
+.stackfiddle-jsfiddleframe{
+	clear: both; 
+	width: 650px;
+	height: 300px; 
+	display: none;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.stackfiddle-chosen{
+	font-weight: bold;
+}
+
+.stackfiddle-code{
+	border: 1px solid #ddd;
+}
