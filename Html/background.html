@@ -4,7 +4,9 @@
 	chrome.extension.onRequest.addListener(function(request, sender, sendResponse){	
 		if (request.method === "getlocal"){
 			sendResponse({'value' : localStorage[request.param]});
-		} else if (request.method === "gettags"){
+		} else if (request.method === "contextmenu") {
+			enableContextMenu(parseInt(request.value));
+		} else if (request.method === "gettags") {
 		
 			if(!localStorage["tags"]) {
 				localStorage["tags"] = 'jscript,jquery,javascript,mootools,html,css,dom,yui,prototype,dojo,extjs';
@@ -16,11 +18,18 @@
 		}
 	});
 	
-	chrome.contextMenus.create({ "title": "Stack Fiddle", "contexts": ["all"], "onclick" : showOptions });
-	
-	function showOptions(info, tab) {
-		chrome.tabs.create({ url:"/Html/options.html", index: (tab.index + 1) });
+	function enableContextMenu(enable){
+		if(enable){
+			chrome.contextMenus.create({ "title": "Stack Fiddle", "contexts": ["all"], "onclick" : function(info,tab){
+					chrome.tabs.create({ url:"/Html/options.html", index: (tab.index + 1) });
+			}});
+		}else{
+			chrome.contextMenus.removeAll();
+		}
 	}
+	
+	var optionsContext = parseInt(localStorage["options-contextmenu"] || 1);
+	enableContextMenu(optionsContext);
 	
 </script>
 </head>

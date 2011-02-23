@@ -9,19 +9,26 @@
 		<script type="text/javascript">
 			$(function(){
 				
-				var optionsInframe = localStorage["optionsInframe"],
+				var optionsInframe = parseInt(localStorage["optionsInframe"]),
 					optionsframework = localStorage["options-framework-value"],
+					optionsContext = parseInt(localStorage["options-contextmenu"] || 1),
 					optionstags = localStorage["tags"];
 					
 				if(optionstags){
 					$('#option-tags').val(optionstags);
 				}
 				
+				if(optionsContext){
+					$("#option-context").attr("checked","checked");
+				}else{
+					$("#option-context").removeAttr("checked");
+				}
+				
 				$('#option-tags').tagsInput({
 					'width':'450px'
 				});
 				
-				if(optionsInframe === 'true'){
+				if(optionsInframe){
 					$("#option-inframe").attr("checked","checked");
 				}else{
 					$("#option-inframe").removeAttr("checked");
@@ -32,8 +39,8 @@
 				}
 				
 				$("#saveButton").click(function(e){
-					localStorage["optionsInframe"] = $("#option-inframe").attr("checked");
-					
+					localStorage["optionsInframe"] = $("#option-inframe").attr("checked") ? 1 : 0;
+					localStorage["options-contextmenu"] = $("#option-context").attr("checked") ? 1 : 0;
 					$framework = $("#js_library :selected");
 					
 					localStorage["options-framework"] = $framework.data("framework");
@@ -41,6 +48,8 @@
 					localStorage["options-framework-value"] = $framework.val();
 
 					localStorage["tags"] = $('#option-tags').val();
+					
+					chrome.extension.sendRequest({'method':'contextmenu', 'value' : localStorage["options-contextmenu"]});
 					
 					$("#saveInfo").show();
 					setTimeout(function(){ $("#saveInfo").fadeOut(); }, 3000);
@@ -71,6 +80,13 @@
 			<h1>Stack Fiddle</h1>
 			<h2>Options</h2>
 			<div id="options">
+				<div class="option">
+					<label>
+						<input type="checkbox" id="option-context" />
+						Enable context menu
+					</label>
+					<p class="note">Don't like the context menu? Uncheck this to disable it.</p>
+				</div>
 				<div class="option">
 					<label>
 						<input type="checkbox" id="option-inframe" />
