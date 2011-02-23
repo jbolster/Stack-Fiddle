@@ -1,7 +1,7 @@
 {
 	"name": "Stack Fiddle",
 	"version": "1.0.4",
-	"description": "A jsFiddle helper for Stack Overflow",
+	"description": "A jsFiddle helper for the Stack Exchange sites",
 	"background_page": "Html/background.html",
 	"options_page": "Html/options.html",
 	"incognito": "split",

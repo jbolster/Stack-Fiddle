@@ -1,6 +1,6 @@
 h1. Stack Fiddle
 
-Stack Fiddle is a Google Chrome extension that helps you to post code blocks to jsFiddle. It modifies the Stack Overflow question pages to give all the code block headers, providing an easy way to select different types of code to send to jsFiddle.
+Stack Fiddle is a Google Chrome extension that helps you to post code blocks to jsFiddle. It modifies the Stack Exchange question pages to give all the code block headers, providing an easy way to select different types of code to send to jsFiddle.
 
 * Enabled only on questions with certain tags
 * Allows HTML / JavaScript and CSS to be sent
