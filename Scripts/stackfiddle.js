@@ -77,7 +77,7 @@ jQuery(function($,undefined){
 		});
 		
 		$("#stackfiddle-title").val("Fiddle for " + $("#question-header").text().trim());
-		$("#stackfiddle-description").val("This fiddle was created using the FiddleMe Chrome extension - the StackOverflow question that was fiddled was: " + document.location.href);
+		$("#stackfiddle-description").val("This fiddle was created using the Stack Fiddle Chrome extension - the StackExchange question that was fiddled was: " + document.location.href);
 		
 		chrome.extension.sendRequest({'method':'getlocal', 'param':'optionsInframe'}, function(response)
 		{
