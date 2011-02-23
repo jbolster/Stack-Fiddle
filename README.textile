@@ -1,0 +1,21 @@
+h1. Stack Fiddle
+
+Stack Fiddle is a Google Chrome extension that helps you to post code blocks to jsFiddle. It modifies the Stack Overflow question pages to give all the code block headers, providing an easy way to select different types of code to send to jsFiddle.
+
+* Enabled only on questions with certain tags
+* Allows HTML / JavaScript and CSS to be sent
+* Choose your default framework for jsFiddle to use
+* Automatically detect jsFiddle links and provide a way to show embedded fiddles
+
+h2. Project Info
+
+Hi! I'm Jonathon Bolster and I wrote Stack Fiddle. If you have any suggestions and comments, then I'm more than happy to hear them. You can contact me (or the project) at any of the following:
+
+* "Google Chrome Extensions Gallery": https://chrome.google.com/extensions/detail/loemajeogfdlphofpdfncpbbeoenmbpm
+* "Github Project":https://github.com/jbolster/Stack-Fiddle
+* "My Blog":http://www.bolsterweb.com
+* "My Twitter (@jbolster)":http://www.twitter.com/jbolster
+
+h2. Extra Information
+
+This code is licensed under the 'Creative Commons Attribution-ShareAlike 2.5' licence. Generally (I hope the licence reflects this), you're free to do what you want - as long as you attribute the original project and author and share it under the same or similar license. Please see the LICENSE file for full details - or http://creativecommons.org/licenses/by-sa/2.5/ for the summary. If you have any doubts about whether your use is against the licencing (or any comments about it), don't hesitate to contact me. I don't bite.
