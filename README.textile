@@ -11,7 +11,7 @@ h2. Project Info
 
 Hi! I'm Jonathon Bolster and I wrote Stack Fiddle. If you have any suggestions and comments, then I'm more than happy to hear them. You can contact me (or the project) at any of the following:
 
-* "Google Chrome Extensions Gallery": https://chrome.google.com/extensions/detail/loemajeogfdlphofpdfncpbbeoenmbpm
+* "Google Chrome Extensions Gallery":https://chrome.google.com/extensions/detail/loemajeogfdlphofpdfncpbbeoenmbpm
 * "Github Project":https://github.com/jbolster/Stack-Fiddle
 * "My Blog":http://www.bolsterweb.com
 * "My Twitter (@jbolster)":http://www.twitter.com/jbolster
