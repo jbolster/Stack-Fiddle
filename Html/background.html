@@ -20,7 +20,11 @@
 	
 	function enableContextMenu(enable){
 		if(enable){
-			chrome.contextMenus.create({ "title": "Stack Fiddle", "contexts": ["all"], "onclick" : function(info,tab){
+			chrome.contextMenus.create({
+				"title": "Stack Fiddle", 
+				"contexts": ["all"], 
+				"documentUrlPatterns" : ["http://stackoverflow.com/*"],
+				"onclick" : function(info,tab){
 					chrome.tabs.create({ url:"/Html/options.html", index: (tab.index + 1) });
 			}});
 		}else{
