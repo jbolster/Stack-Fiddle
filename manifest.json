@@ -7,8 +7,6 @@
 	"incognito": "split",
 	"permissions":[
 		"tabs",
-
-		"http://*/*",
 		"contextMenus"
 	],
 	"content_scripts": [
