@@ -19,6 +19,8 @@
 	});
 	
 	function enableContextMenu(enable){
+		chrome.contextMenus.removeAll();
+				
 		if(enable){
 			chrome.contextMenus.create({
 				"title": "Stack Fiddle", 
@@ -38,8 +40,6 @@
 				"onclick" : function(info,tab){
 					chrome.tabs.create({ url:"/Html/options.html", index: (tab.index + 1) });
 			}});
-		}else{
-			chrome.contextMenus.removeAll();
 		}
 	}
 	
