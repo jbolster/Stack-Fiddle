@@ -4,7 +4,7 @@ jQuery(function($,undefined){
 	// Get the tags and decide whether or not to add the headers to the code
 	chrome.extension.sendRequest({'method':'gettags'}, function(response)
 	{
-		var postTags = $(".post-taglist .post-tag").map(function(){ return $(this).html();}),
+		var postTags = $(".post-taglist .post-tag").map(function(){ return $(this).text();}),
 			tagApplies = (function(pageTags,myTags){ 			
 							for(var i=0;i<pageTags.length;i++){ 
 								if($.inArray(pageTags[i], myTags)>-1){
