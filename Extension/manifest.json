@@ -1,6 +1,6 @@
 {
 	"name": "Stack Fiddle",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "A jsFiddle helper for the Stack Exchange sites",
 	"background_page": "Html/background.html",
 	"options_page": "Html/options.html",
